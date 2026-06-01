@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortfeld GEHEN — verbele lui „a merge" · Germană A2/B1</title>
+    <meta property="og:title" content="Wortfeld GEHEN (Aprofundare)">
+    <meta property="og:description" content="Câmpul lexical al lui „a merge": 24 de verbe precise care înlocuiesc gehen. Dialog animat + 5 exerciții. Nivel A2/B1.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#top" class="navbar-logo">ʚଓ Claudia Toth</a>
+        <ul class="navbar-menu">
+            <li><a href="#teorie" onclick="openSection(0)">Teorie</a></li>
+            <li><a href="#dialog" onclick="openSection(1)">🎬 Dialog</a></li>
+            <li><a href="#ex1" onclick="openSection(2)">Ex. 1</a></li>
+            <li><a href="#ex2" onclick="openSection(3)">Ex. 2</a></li>
+            <li><a href="#ex3" onclick="openSection(4)">Ex. 3</a></li>
+            <li><a href="#ex4" onclick="openSection(5)">Ex. 4</a></li>
+            <li><a href="#ex5" onclick="openSection(6)">Ex. 5</a></li>
+            <li><a href="#flashcards" onclick="openSection(7)">📇 Flashcards</a></li>
+            <li><a href="#verbs" onclick="openSection(8)">🔁 Verb-Konjugation</a></li>
+            <li><a href="#final-test" onclick="openSection(9)">🎯 Test Final</a></li>
+            <li><a href="aprofundare-wortfeld-gehen.pdf" download>📄 PDF</a></li>
+            <li><a href="https://yaz5dfqyx89.typeform.com/to/JHBHSIRc" target="_blank" rel="noopener noreferrer">💬 Feedback</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="header">
+            <h1>ʚଓ Wortfeld GEHEN</h1>
+            <p class="subtitle">Câmpul lexical al lui „a merge" — 24 de verbe precise · Nivel A2/B1</p>
+            <p>Claudia Toth · Aprofundare — vocabular nuanțat</p>
+        </div>
+
+        <div class="content">
+            <div class="section" id="teorie">
+                <div class="section-header" onclick="toggleMainSection(0)">
+                    <h3>ʚଓ TEORIE</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-0">
+                    <div id="theory-container"></div>
+                </div>
+            </div>
+
+            <div class="section" id="dialog">
+                <div class="section-header" onclick="toggleMainSection(1)">
+                    <h3>ʚଓ 🎬 Dialog animat: Andreeas Wochenende</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-1">
+                    <p style="margin-bottom:14px;"><em>Apasă ▶️ Pornește. Bulele de vorbire apar pe rând, iar personajul care vorbește „pulsează". Ascultă cum Andreea folosește verbele din Wortfeld în loc de simplul „gehen". Poți reasculta orice replică din transcript (🔁).</em></p>
+                    <div id="dialog1-container"></div>
+                </div>
+            </div>
+
+            <div class="section" id="ex1">
+                <div class="section-header" onclick="toggleMainSection(2)">
+                    <h3>ʚଓ Übung 1: Asociază verb ↔ traducere</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-2">
+                    <div id="ex1-container"></div>
+                    <div class="btn-container">
+                        <button class="btn btn-check" onclick="checkExercise(1)">✓ Verifica</button>
+                        <button class="btn btn-reset" onclick="resetExercise(1)">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-1"></div>
+                </div>
+            </div>
+
+            <div class="section" id="ex2">
+                <div class="section-header" onclick="toggleMainSection(3)">
+                    <h3>ʚଓ Übung 2: Care verb se potrivește?</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-3">
+                    <div id="ex2-container"></div>
+                    <div class="btn-container">
+                        <button class="btn btn-check" onclick="checkExercise(2)">✓ Verifica</button>
+                        <button class="btn btn-reset" onclick="resetExercise(2)">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-2"></div>
+                </div>
+            </div>
+
+            <div class="section" id="ex3">
+                <div class="section-header" onclick="toggleMainSection(4)">
+                    <h3>ʚଓ Übung 3: Ergänze richtig — completează</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-4">
+                    <div id="ex3-container"></div>
+                    <div class="btn-container">
+                        <button class="btn btn-check" onclick="checkExercise(3)">✓ Verifica</button>
+                        <button class="btn btn-reset" onclick="resetExercise(3)">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-3"></div>
+                </div>
+            </div>
+
+            <div class="section" id="ex4">
+                <div class="section-header" onclick="toggleMainSection(5)">
+                    <h3>ʚଓ Übung 4: Înlocuiește „gehen"</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-5">
+                    <div id="ex4-container"></div>
+                    <div class="btn-container">
+                        <button class="btn btn-check" onclick="checkExercise(4)">✓ Verifica</button>
+                        <button class="btn btn-reset" onclick="resetExercise(4)">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-4"></div>
+                </div>
+            </div>
+
+            <div class="section" id="ex5">
+                <div class="section-header" onclick="toggleMainSection(6)">
+                    <h3>ʚଓ Übung 5: Sortează verbele pe nuanțe</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-6">
+                    <div id="ex5-container"></div>
+                    <div class="btn-container">
+                        <button class="btn btn-check" onclick="checkExercise(5)">✓ Verifica</button>
+                        <button class="btn btn-reset" onclick="resetExercise(5)">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-5"></div>
+                </div>
+            </div>
+
+            <div class="section" id="flashcards">
+                <div class="section-header" onclick="toggleMainSection(7)">
+                    <h3>ʚଓ Flashcards - Învățare prin repetiție</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-7">
+                    <div id="flashcards-container"></div>
+                </div>
+            </div>
+
+            <div class="section" id="verbs">
+                <div class="section-header" onclick="toggleMainSection(8)">
+                    <h3>ʚଓ 🔁 Verb-Konjugation - Verbele-cheie</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-8">
+                    <div id="verbs-container"></div>
+                </div>
+            </div>
+
+            <div class="section" id="final-test">
+                <div class="section-header" onclick="toggleMainSection(9)">
+                    <h3>ʚଓ 🎯 Test Final - Testează-ți cunoștințele!</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-9">
+                    <div id="final-test-container"></div>
+                </div>
+            </div>
+
+            <div class="theory-box" style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.3rem; font-weight: bold; color: #065f46;">🎉 Gut gemacht!</p>
+                <p>Acum ai 24 de verbe în loc de un singur „gehen". Provocarea: data viitoare când vrei să spui „a merge", oprește-te o secundă și alege verbul PRECIS. Așa vorbește un vorbitor avansat.</p>
+            </div>
+
+            <!-- ===== FEEDBACK BANNER ===== -->
+            <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #10B981; border-radius: 14px; padding: 28px 24px; margin-top: 32px; text-align: center; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.12);">
+                <div style="font-size: 2.4rem; margin-bottom: 6px;">💬</div>
+                <h3 style="color: #065f46; font-size: 1.4rem; margin: 0 0 10px; font-weight: bold;">Spune-ne părerea ta!</h3>
+                <p style="color: #047857; font-size: 1rem; margin: 0 0 18px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+                    Ne ajuți cu un feedback scurt despre lecție? Părerea ta mă ajută să fac lecțiile <strong>tot mai pe înțelesul tău</strong>. Durează sub 2 minute. 🦋
+                </p>
+                <a href="https://yaz5dfqyx89.typeform.com/to/JHBHSIRc" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #10B981; color: white; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.05rem; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3); transition: all 0.2s;" onmouseover="this.style.background='#047857'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='#10B981'; this.style.transform='translateY(0)';">
+                    ✨ Completează formularul →
+                </a>
+                <p style="color: #6b7280; font-size: 0.82rem; margin-top: 14px; font-style: italic;">
+                    ʚଓ Claudia Toth · Mulțumesc pentru încredere
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="theory.js"></script>
+    <script src="dialogs.js"></script>
+    <script src="exercises.js"></script>
+    <script src="flashcards.js"></script>
+    <script src="verbs.js"></script>
+    <script src="final-test.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
