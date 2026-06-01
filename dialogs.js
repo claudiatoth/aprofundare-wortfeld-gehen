@@ -110,7 +110,7 @@ const dialogState = {};
 function initDialogState(dialogId) {
     if (!dialogState[dialogId]) {
         dialogState[dialogId] = {
-            isPlaying: false, currentReply: 0, lastDisplayedIdx: -1,
+            isPlaying: false, currentReply: 0, lastDisplayedIdx: -1, mode: null,
             timeouts: [], timeUpdateHandler: null, endedHandler: null,
             data: dialogsById[dialogId]
         };
@@ -133,7 +133,8 @@ function playDialog(dialogId) {
 
     if (audio && !state.timeUpdateHandler) {
         state.timeUpdateHandler = () => {
-            if (!state.isPlaying) return;
+            if (!state.isPlaying || state.mode === 'timer') return;
+            if (audio.currentTime > 0) state.mode = 'audio';
             const t = audio.currentTime;
             let currentIdx = -1;
             for (let i = 0; i < data.replici.length; i++) {
@@ -147,23 +148,35 @@ function playDialog(dialogId) {
             }
         };
         audio.addEventListener('timeupdate', state.timeUpdateHandler);
-        state.endedHandler = () => endDialog(dialogId);
+        state.endedHandler = () => { if (state.mode === 'audio') endDialog(dialogId); };
         audio.addEventListener('ended', state.endedHandler);
+        // MP3 lipsă / 404 → eroare media → pornim animația pe timer
+        audio.addEventListener('error', () => startTimerFallback(dialogId));
     }
 
     if (audio) {
         if (state.currentReply >= data.replici.length) {
-            audio.currentTime = 0; state.currentReply = 0; state.lastDisplayedIdx = -1;
+            try { audio.currentTime = 0; } catch (e) {}
+            state.currentReply = 0; state.lastDisplayedIdx = -1;
         }
-        audio.play().catch(() => startTimerFallback(dialogId));
+        const p = audio.play();
+        if (p && p.catch) p.catch(() => startTimerFallback(dialogId));
+        // Watchdog: dacă audio nu pornește REAL în 500ms (fără MP3), animăm pe timer.
+        setTimeout(() => {
+            if (state.isPlaying && state.mode !== 'audio' && (audio.paused || !audio.currentTime)) {
+                startTimerFallback(dialogId);
+            }
+        }, 500);
     } else {
         startTimerFallback(dialogId);
     }
 }
 
-// Fallback pe timer (animație fără audio înregistrat)
+// Fallback pe timer (animație fără audio înregistrat) — pornește MEREU de la replica curentă
 function startTimerFallback(dialogId) {
     const state = initDialogState(dialogId);
+    if (state.mode) return; // deja pornit (audio sau timer) — nu dubla
+    state.mode = 'timer';
     const data = state.data;
     const startFromReply = state.currentReply;
     const offsetMs = startFromReply > 0 ? data.replici[startFromReply - 1].start * 1000 : 0;
@@ -222,6 +235,7 @@ function pauseDialog(dialogId) {
     const state = dialogState[dialogId];
     if (!state || !state.isPlaying) return;
     state.isPlaying = false;
+    state.mode = null; // la reluare, re-detectăm audio vs timer
     state.timeouts.forEach(t => clearTimeout(t));
     state.timeouts = [];
     const audio = document.getElementById(`audio-${dialogId}`);
@@ -248,6 +262,7 @@ function endDialog(dialogId) {
     const state = dialogState[dialogId];
     if (!state) return;
     state.isPlaying = false;
+    state.mode = null;
     state.currentReply = state.data.replici.length;
     state.timeouts = [];
     document.getElementById(`btn-play-${dialogId}`).disabled = false;
