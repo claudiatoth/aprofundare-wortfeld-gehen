@@ -151,7 +151,7 @@ function buildEx3() {
     if (!container) return;
     let html = `<div class="exercise-instruction"><strong>✍️ Completează cu verbul potrivit.</strong><br>Cuvinte de ajutor: <em>eilte · hastete · schlich · stapfte · sprang · hüpfte · stolperte · spazierte · schlenderte · bummelte · trottet · flitzen · rennen</em></div>`;
     ex3Items.forEach((item, idx) => {
-        html += `<div class="exercise-item"><span class="exercise-number">${idx + 1}</span><div class="input-group"><label>${item.before} <input type="text" id="ex3-${item.id}" placeholder="..." style="width:140px;display:inline-block;"> ${item.after}</label><div style="color:#6b7280;font-size:0.85rem;font-style:italic;margin-top:4px;">🇷🇴 ${item.ro}</div></div><div class="feedback" id="ex3-f${item.id}"></div></div>`;
+        html += `<div class="exercise-item"><span class="exercise-number">${idx + 1}</span><div class="input-group"><label>${item.before} <input type="text" id="ex3-${item.id}" placeholder="..." style="width:140px;display:inline-block;"> ${item.after}</label><div style="color:#5A5147;font-size:0.85rem;font-style:italic;margin-top:4px;">🇷🇴 ${item.ro}</div></div><div class="feedback" id="ex3-f${item.id}"></div></div>`;
     });
     container.innerHTML = html;
 }

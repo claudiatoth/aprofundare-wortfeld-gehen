@@ -34,7 +34,7 @@ const theoryHTML = `
                 <p style="margin-top:8px;">În loc de „Das Kind geht leise" spui „Das Kind geht <strong>auf Zehenspitzen</strong>" (pe vârfuri). În loc de „Der Hund geht schnell" spui „Der Hund <strong>flitzt</strong>" (zboară). Mai precis, mai viu.</p>
             </div>
 
-            <div class="theory-box" style="background:#fef3c7;border-color:#f59e0b;">
+            <div class="theory-box" style="background:#F5F0E8;border-color:#D4A574;">
                 <h4>✍️ Notă despre diacritice (ä, ö, ü, ß)</h4>
                 <p>Sistemul de verificare e blând: poți scrie Umlaut-urile corect (<em>überqueren</em>) sau cu varianta de înlocuire (<em>ueberqueren</em>). Ambele sunt acceptate. La fel, diacriticele românești nu te încurcă.</p>
             </div>
@@ -100,7 +100,7 @@ const theoryHTML = `
                     <tr><td class="verb">sausen</td><td>a trece vijelios (cu zgomot)</td><td><em>Ein Auto sauste an uns vorbei.</em></td><td>O mașină a trecut vijelios pe lângă noi.</td></tr>
                 </tbody>
             </table>
-            <div class="theory-box" style="background:#fef3c7;border-color:#f59e0b;">
+            <div class="theory-box" style="background:#F5F0E8;border-color:#D4A574;">
                 <h4>⚠️ Intensitatea grabei</h4>
                 <p><strong>eilen</strong> (te grăbești) → <strong>hasten</strong> (cu efort, gâfâind) → <strong>hetzen</strong> (agitat, stresat). <strong>flitzen</strong> și <strong>sausen</strong> sunt cele mai rapide (gen săgeată).</p>
             </div>
@@ -190,7 +190,7 @@ const theoryHTML = `
                     <tr><td class="verb">umfahren</td><td>a ocoli (cu vehiculul)</td><td><em>Wir umfahren das Baustellengebiet.</em></td><td>Ocolim zona de construcții.</td></tr>
                 </tbody>
             </table>
-            <div class="theory-box" style="background:#fef3c7;border-color:#f59e0b;">
+            <div class="theory-box" style="background:#F5F0E8;border-color:#D4A574;">
                 <h4>⚠️ überqueren și umfahren sunt NEseparabile aici</h4>
                 <p>Cu accent pe rădăcină, prefixul NU se separă: <em>Wir <strong>überqueren</strong> die Straße</em> (nu „queren über"). Atenție la <strong>umfahren</strong>: cu accent pe „um-" înseamnă „a dărâma/a lovi cu mașina", iar cu accent pe „fahren" înseamnă „a ocoli" — aici sensul e <em>a ocoli</em>.</p>
             </div>

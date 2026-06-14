@@ -116,7 +116,7 @@ function buildVerbs() {
     const container = document.getElementById('verbs-container');
     if (!container) return;
     let html = `
-        <div class="theory-box" style="background:#fffbeb;border-left:4px solid #f59e0b">
+        <div class="theory-box" style="background:#F5F0E8;border-left:4px solid #D4A574">
             <h4>📌 Cum se conjugă verbele din Wortfeld GEHEN?</h4>
             <p>Cele mai multe sunt <strong>REGULATE</strong> (rădăcină + <strong>-te</strong> la Präteritum: bummeln → bummelte). Doar câteva sunt <strong>TARI / neregulate</strong> — pe acelea le vezi complet mai jos.</p>
             <p style="margin-top:8px"><strong>Reamintire:</strong> Präteritum = IMPERFECT (el alerga, el sărea). Perfekt = perfect compus (el a alergat). Aproape toate sunt verbe de mișcare → Perfekt cu <strong>SEIN</strong>.</p>
@@ -144,7 +144,7 @@ function buildVerbs() {
                     <table class="grammar-table"><thead><tr><th>Pronume</th><th>Formă</th><th>Traducere RO</th></tr></thead><tbody>${praeteritumRows}</tbody></table>
                     <h4 style="color:#065f46;margin:14px 0 8px">📕 Perfekt (timp vorbit)</h4>
                     <div class="example-box"><div class="de">${v.perfekt}</div><div class="ro">${v.perfektRo}</div></div>
-                    <div class="theory-box" style="margin-top:12px;background:#f0fdf4"><p><strong>📌 Notă:</strong> ${v.notes}</p></div>
+                    <div class="theory-box" style="margin-top:12px;background:#FBF7EF"><p><strong>📌 Notă:</strong> ${v.notes}</p></div>
                 </div>
             </div>
         `;
@@ -154,7 +154,7 @@ function buildVerbs() {
             <h4>🎯 Model pentru verbele REGULATE din Wortfeld</h4>
             <p>Se conjugă identic ca <strong>spazieren</strong> (rădăcină + -te la Präteritum, Perfekt cu sein la mișcare):</p>
             <p style="margin-top:8px"><strong>bummeln, schlendern, wandern, eilen, hasten, hetzen, flitzen, sausen, stapfen, trampeln, waten, trotten, torkeln, wanken, stolpern, marschieren, überqueren, hüpfen.</strong></p>
-            <p style="margin-top:8px;color:#6b7280;font-style:italic">Ex: wandern → wanderte → ist gewandert · eilen → eilte → ist geeilt · stolpern → stolperte → ist gestolpert.</p>
+            <p style="margin-top:8px;color:#5A5147;font-style:italic">Ex: wandern → wanderte → ist gewandert · eilen → eilte → ist geeilt · stolpern → stolperte → ist gestolpert.</p>
         </div>
     `;
     container.innerHTML = html;
